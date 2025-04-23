@@ -3,8 +3,8 @@
   max-width: 420px;
   margin: 40px auto;
   padding: 20px 24px;
-  background-color: #f9fcff;
-  border: 2px solid #a3d5ff;
+  background-color: #98aabd;
+  border: 2px solid #9fccf0;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -14,7 +14,7 @@
 .reminder-form h2 {
   margin-bottom: 20px;
   text-align: center;
-  color: #2a4d69;
+  color: #031728;
   font-size: 20px;
 }
 
@@ -23,11 +23,13 @@
   margin-bottom: 14px;
 }
 
+
+
 .form-group label {
   display: block;
   margin-bottom: 6px;
   font-weight: 500;
-  color: #2a4d69;
+  color: #0d273d;
 }
 
 /* Inputs */
@@ -44,8 +46,35 @@
   transition: border-color 0.3s ease;
 }
 
+
+.input-field:focus {
+  border-color: #4d90fe;  
+  outline: none;           
+  box-shadow: 0 0 5px rgba(77, 144, 254, 0.5);  
+}
+
+
+.form-group input[type="email"]:invalid,
+.form-group input[type="tel"]:invalid {
+  border-color: #e74c3c;  
+  /* background-color: #fdd;   */
+}
+
+.form-group input:valid {
+  border-color: #2ecc71;  
+}
+.input:invalid:focus {
+  background-color: #f8d7da;  
+}
+
+
+.input-field:valid:focus {
+  background-color: #d4edda;  
+}
+
 .form-group input:focus {
-  border-color: #57a0d3;
+  border-color: #4ae8be;
+ 
   outline: none;
 }
 
@@ -61,15 +90,115 @@
 button[type="submit"] {
   width: 100%;
   padding: 10px;
-  background-color: #56cc9d;
+  background-color: #2d6a84;
   color: #fff;
   font-size: 15px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 button[type="submit"]:hover {
-  background-color: #3cbf87;
+  background-color: #3cabbf;
+}
+
+
+/* Active/Clicked Button State (Simulate Submission) */
+button[type="submit"]:active {
+  background-color: #2e65a3; 
+  transform: scale(0.98); /*slight shrink effect for pressed effect*/
+}
+
+/* Loading State (Simulate Loading when the button is clicked) */
+button[type="submit"]:active:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-left: -10px;
+  margin-top: -10px;
+  border: 3px solid #fff;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Button Disabled State */
+button[type="submit"]:disabled {
+  background-color: #b3d4fc; /* Light blue to show disabled state */
+  cursor: not-allowed; /* Show "not-allowed" cursor */
+  opacity: 0.7; /* Make the button appear faded */
+}
+
+/* Optional: Disable text selection on the button while in loading state */
+button[type="submit"]:active,
+button[type="submit"]:disabled {
+  user-select: none;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  color: #2d7796;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.modal-content h3 {
+  color: #e74c3c; /* Red for error */
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  padding: 10px 20px;
+  background-color: #2d7796;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.close-btn:hover {
+  background-color: #3cabbf;
 }
