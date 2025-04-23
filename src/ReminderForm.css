@@ -1,0 +1,75 @@
+/* Container */
+.reminder-form {
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 20px 24px;
+  background-color: #f9fcff;
+  border: 2px solid #a3d5ff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Heading */
+.reminder-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #2a4d69;
+  font-size: 20px;
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #2a4d69;
+}
+
+/* Inputs */
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #57a0d3;
+  outline: none;
+}
+
+/* Checkbox Group */
+.checkbox-group label {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 14px;
+  color: #3d5a80;
+}
+
+/* Submit Button */
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #56cc9d;
+  color: #fff;
+  font-size: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #3cbf87;
+}
